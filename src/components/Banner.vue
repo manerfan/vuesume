@@ -3,7 +3,8 @@
         <div class="bg"></div>
         <div class="mask"></div>
         <div class="title">
-
+            <h2>I'M JONATHAN DOE</h2>
+            <h4>Design & Build Beautiful Crafted Web Experiences</h4>
         </div>
     </div>
 </template>
@@ -16,7 +17,10 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+    @import "../styles/variable";
+
     .banner {
+        display: flex;
         position: relative;
         width: 100%;
         height: 100vh;
@@ -39,6 +43,56 @@
         .mask {
             z-index: -1;
             background-color: rgb(0, 0, 0, 0.6);
+        }
+
+        .title {
+            margin: auto;
+            text-align: center;
+            font-weight: bold;
+            color: $--font-color;
+            border: $--font-color solid .1rem;
+            position: relative;
+            align-self: center;
+
+            h2 {
+                margin-bottom: 0;
+            }
+
+            h4 {
+                margin-top: 0;
+            }
+
+            @media (max-width: $--screen-sm-min) {
+                h2 {
+                    font-size: 32px;
+                }
+                h4 {
+                    font-size: 24px;
+                }
+                width: 95%;
+            }
+
+            @media (min-width: $--screen-sm-min) {
+                h2 {
+                    font-size: 48px;
+                }
+                h4 {
+                    font-size: 28px;
+                }
+                width: 90%;
+            }
+
+            @media (min-width: $--screen-md-min) {
+                h2 {
+                    font-size: 64px;
+                }
+                h4 {
+                    font-size: 32px;
+                }
+                width: 80%;
+            }
+
+            max-width: 960px;
         }
     }
 </style>
