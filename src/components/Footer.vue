@@ -1,17 +1,18 @@
 <template>
-    <div class="footer">
-
+    <div class="fotter">
     </div>
 </template>
 
-<script>
-    export default {
-        name: "Footer"
-    };
+<script lang="ts">
+    import {Component, Vue} from 'vue-property-decorator';
+
+    @Component
+    export default class Footer extends Vue {
+    }
 </script>
 
 <style scoped lang="scss">
-    @import "../styles/variable";
+    @import '../styles/variable';
 
     .footer {
         display: flex;

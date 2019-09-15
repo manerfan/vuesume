@@ -1,102 +1,108 @@
 <template>
-    <div class="banner">
+    <div class="banner" id="banner">
         <div class="bg"></div>
-        <div class="mask"></div>
-        <div class="title">
-            <h2>鄙人 xzy</h2>
-            <h4>码农一枚，长期从事ABC开发</h4>
+        <div class="desc">
+            <span class="avatar ant-avatar ant-avatar-circle ant-avatar-image">
+                <img draggable="false" src="../assets/avatar.jpg">
+            </span>
+            <h1>{{banner.title}}</h1>
+            <h3 class="typer-white">
+                鄙人，
+                <vue-typer :text='banner.desc' :type-delay='200' eraseStyle='select-all'></vue-typer>
+            </h3>
         </div>
+        <a class="scroll-next animated infinite bounce" href="#about">
+            <a-icon type="double-right"/>
+        </a>
     </div>
 </template>
 
-<script>
-    export default {
-        name: "Banner"
-    };
+<script lang="ts">
+    import {Component, Vue} from 'vue-property-decorator';
+    import {mapGetters} from 'vuex';
+
+    // tslint:disable-next-line:no-var-requires
+    const VueTyper = require('vue-typer').VueTyper;
+
+    @Component({
+        components: {
+            VueTyper,
+        },
+        computed: {
+            ...mapGetters(['banner']),
+        },
+    })
+    export default class Banner extends Vue {
+    }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-    @import "../styles/variable";
+    @import '../styles/variable';
 
     .banner {
         display: flex;
         position: relative;
+        justify-content: center;
+        align-items: center;
         width: 100%;
         height: 100vh;
 
-        .bg, .mask {
+        .bg {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-        }
-
-        .bg {
             z-index: -2;
-            background: rgb(0, 0, 0) url("../assets/bg_banner.jpeg") no-repeat center center fixed;
+            background: rgb(0, 0, 0) url("../assets/bg_banner.jpg") no-repeat center center fixed;
             background-size: cover;
-            filter: blur(2px);
         }
 
-        .mask {
-            z-index: -1;
-            background-color: rgb(0, 0, 0, 0.6);
+        .desc {
+            margin-bottom: 20vh;
+
+            * {
+                display: block;
+                margin: auto;
+                color: $--font-color;
+                text-shadow: 0 0 5px rgba(0, 0, 0, .5);
+            }
+
+            .avatar {
+                z-index: -1;
+                width: 160px;
+                height: 160px;
+                line-height: 160px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+            }
+
+            h1 {
+                font-size: 3rem;
+                margin: 3rem auto 1rem;
+            }
+
+            h3 {
+                font-size: 1.5rem;
+
+                .vue-typer {
+                    display: inline-block;
+                }
+            }
         }
 
-        .title {
-            margin: auto;
-            text-align: center;
-            font-weight: bold;
+        .scroll-next {
+            position: absolute;
+            display: inline-block;
+            width: 100%;
+            bottom: 5vh;
+            font-size: 1.5rem;
             color: $--font-color;
-            border: $--font-color solid 1px;
-            border-radius: 4px;
-            position: relative;
-            align-self: center;
+            animation-duration: 2s;
+            animation-delay: 1s;
 
-            h2 {
-                margin-bottom: 0;
+            * {
+                transform: rotate(45deg);
             }
-
-            h4 {
-                margin-top: 0;
-            }
-
-            // 超小屏
-            @media (max-width: $--screen-sm-min) {
-                h2 {
-                    font-size: 32px;
-                }
-                h4 {
-                    font-size: 24px;
-                }
-                width: 95%;
-            }
-
-            // 小屏
-            @media (min-width: $--screen-sm-min) {
-                h2 {
-                    font-size: 48px;
-                }
-                h4 {
-                    font-size: 28px;
-                }
-                width: 90%;
-            }
-
-            // 中大屏
-            @media (min-width: $--screen-md-min) {
-                h2 {
-                    font-size: 64px;
-                }
-                h4 {
-                    font-size: 32px;
-                }
-                width: 80%;
-            }
-
-            max-width: 960px;
         }
     }
 </style>
