@@ -3,8 +3,8 @@
         <div class="bg"></div>
         <div class="mask"></div>
         <div class="title">
-            <h2>I'M JONATHAN DOE</h2>
-            <h4>Design & Build Beautiful Crafted Web Experiences</h4>
+            <h2>鄙人 xzy</h2>
+            <h4>码农一枚，长期从事ABC开发</h4>
         </div>
     </div>
 </template>
@@ -50,7 +50,8 @@
             text-align: center;
             font-weight: bold;
             color: $--font-color;
-            border: $--font-color solid .1rem;
+            border: $--font-color solid 1px;
+            border-radius: 4px;
             position: relative;
             align-self: center;
 
@@ -62,6 +63,7 @@
                 margin-top: 0;
             }
 
+            // 超小屏
             @media (max-width: $--screen-sm-min) {
                 h2 {
                     font-size: 32px;
@@ -72,6 +74,7 @@
                 width: 95%;
             }
 
+            // 小屏
             @media (min-width: $--screen-sm-min) {
                 h2 {
                     font-size: 48px;
@@ -82,6 +85,7 @@
                 width: 90%;
             }
 
+            // 中大屏
             @media (min-width: $--screen-md-min) {
                 h2 {
                     font-size: 64px;

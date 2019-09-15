@@ -21,7 +21,7 @@
 <style scoped lang="scss">
     #app {
         .shadow {
-            box-shadow: 0 2px 6px #5f5f5f;
+            box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
         }
 
         .content {
