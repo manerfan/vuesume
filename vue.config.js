@@ -9,7 +9,7 @@ module.exports = {
     configureWebpack: {
         plugins: [
             new WebpackAliyunOssPlugin({
-                publicPath: "http://vuesume.oss-cn-beijing.aliyuncs.com"
+                enable: false
             })
         ]
     }

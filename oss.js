@@ -23,6 +23,7 @@ var aliyunConfig = new ConfigFileLoader.Loader().get('aliyun');
 
 // 默认配置参数
 var DEFAULT_OPTIONS = {
+    enable: false,
     retry: 3,
     filter: function (file) {
         return true;
@@ -33,6 +34,10 @@ var DEFAULT_OPTIONS = {
  */
 function WebpackAliyunOssPlugin(options) {
     this.options = u.extend({}, DEFAULT_OPTIONS, options);
+
+    if (!this.options.enable) {
+        return;
+    }
 
     var conf = aliyunConfig;
 
@@ -46,6 +51,11 @@ function WebpackAliyunOssPlugin(options) {
 
 WebpackAliyunOssPlugin.prototype.apply = function (compiler) {
     var me = this;
+    if (!me.options.enable) {
+        console.log('[WebpackAliyunOssPlugin SUCCESS]: skip');
+        return;
+    }
+
     compiler.hooks.emit.tapAsync('WebpackAliyunOssPlugin', function (compilation, callback) {
         var publicPath = url.parse(aliyunConfig.publicPath);
         if (!publicPath.protocol || !publicPath.hostname) {
