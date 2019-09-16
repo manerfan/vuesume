@@ -21,10 +21,13 @@
   "devDependencies": {
     "@vue/cli-plugin-typescript": "^3.11.0",
     "@vue/cli-service": "^3.11.0",
+    "ali-oss": "^6.1.1",
+    "config-file-loader": "^1.0.0",
     "json5": "^2.1.0",
     "node-sass": "^4.9.0",
-    "sass-loader": "^7.3.1",
+    "sass-loader": "^8.0.0",
     "typescript": "^3.4.3",
+    "underscore": "^1.8.3",
     "vue-template-compiler": "^2.6.10",
     "vue-typer": "^1.2.0"
   },
