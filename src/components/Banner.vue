@@ -11,7 +11,7 @@
                 <vue-typer :text='banner.desc' :type-delay='200' eraseStyle='select-all'></vue-typer>
             </h3>
         </div>
-        <a class="scroll-next animated infinite bounce" href="#about">
+        <a class="scroll-next animated infinite bounce" href="#about" v-smooth-scroll>
             <a-icon type="double-right"/>
         </a>
     </div>
@@ -22,7 +22,7 @@
     import {mapGetters} from 'vuex';
 
     // tslint:disable-next-line:no-var-requires
-    const VueTyper = require('vue-typer').VueTyper;
+    import {VueTyper} from 'vue-typer';
 
     @Component({
         components: {
@@ -94,7 +94,8 @@
             position: absolute;
             display: inline-block;
             width: 100%;
-            bottom: 5vh;
+            padding: 2rem 0;
+            bottom: 1vh;
             font-size: 1.5rem;
             color: $--font-color;
             animation-duration: 2s;

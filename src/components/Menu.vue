@@ -3,10 +3,10 @@
         <a-affix>
             <a-menu mode="horizontal" :selectable="false" theme="dark">
                 <a-menu-item>
-                    <a href="#banner"><a-icon type="home" />Home</a>
+                    <a href="#banner" v-smooth-scroll><a-icon type="home" />Home</a>
                 </a-menu-item>
                 <a-menu-item>
-                    <a href="#about"><a-icon type="user" />About Me</a>
+                    <a href="#about" v-smooth-scroll><a-icon type="user" />About Me</a>
                 </a-menu-item>
             </a-menu>
         </a-affix>

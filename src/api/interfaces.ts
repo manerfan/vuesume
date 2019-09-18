@@ -4,5 +4,6 @@ export interface Banner {
 }
 
 export interface UserData {
+    title: string;
     banner: Banner;
 }

@@ -1,6 +1,9 @@
 <template>
-    <div class="content about" id="about" style="height: 2000px">
-        <h1>Information</h1>
+    <div class="content about" id="about">
+        <a-alert :showIcon="false" message="敬请期待" style="margin-bottom: 2rem;"/>
+        <a-skeleton data-aos="fade-right" active avatar :paragraph="{rows: 4}" />
+        <a-skeleton data-aos="fade-right" active avatar :paragraph="{rows: 4}" />
+        <a-skeleton data-aos="fade-right" active avatar :paragraph="{rows: 4}" />
     </div>
 </template>
 

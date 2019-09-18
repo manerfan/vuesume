@@ -57,11 +57,6 @@ WebpackAliyunOssPlugin.prototype.apply = function (compiler) {
     }
 
     compiler.hooks.emit.tapAsync('WebpackAliyunOssPlugin', function (compilation, callback) {
-        var publicPath = url.parse(aliyunConfig.publicPath);
-        if (!publicPath.protocol || !publicPath.hostname) {
-            return callback(new Error('Webpack配置文件中: "output.publicPath"必须设置为域名，例如： https://domain.com/path/'));
-        }
-
         var files = u.filter(u.keys(compilation.assets), me.options.filter);
 
         if (files.length === 0) {
@@ -89,6 +84,7 @@ WebpackAliyunOssPlugin.prototype.apply = function (compiler) {
                 }
             });
         }
+
         upload(files.shift(), me.options.retry).then(function () {
             console.log('[WebpackAliyunOssPlugin FINISHED]', 'All Completed');
             callback();
