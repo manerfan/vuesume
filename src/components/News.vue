@@ -1,8 +1,8 @@
 <template>
-    <div class="content about" id="about">
+    <div class="content news" id="news">
         <div class="heading">
-            <a-row><a-col :span="24"><span>Information</span></a-col></a-row>
-            <a-row><a-col :span="24"><h2>About Me</h2></a-col></a-row>
+            <a-row><a-col :span="24"><span>News</span></a-col></a-row>
+            <a-row><a-col :span="24"><h2>Latest News</h2></a-col></a-row>
         </div>
         <a-skeleton data-aos="fade-right" active avatar :paragraph="{rows: 4}" />
         <a-skeleton data-aos="fade-right" active avatar :paragraph="{rows: 4}" />
@@ -22,7 +22,7 @@
             ...mapGetters([]),
         },
     })
-    export default class About extends Vue {
+    export default class News extends Vue {
     }
 </script>
 

@@ -1,21 +1,12 @@
 <template>
     <a-layout>
-        <a-layout-header class="header">
-            <Banner></Banner>
-        </a-layout-header>
+        <a-layout-header class="header"><Banner/></a-layout-header>
         <a-layout>
-            <a-affix>
-            <a-layout-sider breakpoint="md" collapsedWidth="0">
-                <Menu></Menu>
-            </a-layout-sider>
-            </a-affix>
+            <a-affix><a-layout-sider breakpoint="md" collapsedWidth="0"><Menu/></a-layout-sider></a-affix>
             <a-layout>
-                <a-layout-content>
-                    <About></About>
-                </a-layout-content>
-                <a-layout-footer>
-                    <Footer></Footer>
-                </a-layout-footer>
+                <a-layout-content><About/></a-layout-content>
+                <a-layout-content><News/></a-layout-content>
+                <a-layout-footer><Footer/></a-layout-footer>
             </a-layout>
         </a-layout>
     </a-layout>
@@ -26,6 +17,7 @@
     import Banner from '@/components/Banner.vue';
     import Menu from '@/components/Menu.vue';
     import About from '@/components/About.vue';
+    import News from '@/components/News.vue';
     import Footer from '@/components/Footer.vue';
 
     @Component({
@@ -33,6 +25,7 @@
             Banner,
             Menu,
             About,
+            News,
             Footer,
         },
     })

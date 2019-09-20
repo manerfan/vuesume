@@ -5,7 +5,7 @@
             <span class="avatar ant-avatar ant-avatar-circle ant-avatar-image">
                 <img draggable="false" src="../assets/avatar.jpg">
             </span>
-            <h1>{{banner.title}}</h1>
+            <h1>{{banner.title}}</h1>a
             <h3 class="typer-white">
                 鄙人，
                 <vue-typer :text='banner.desc' :type-delay='200' eraseStyle='select-all'></vue-typer>

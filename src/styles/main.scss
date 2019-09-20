@@ -17,37 +17,48 @@ body {
 }
 
 .content {
-  box-shadow: 10px 0 10px rgba(0, 0, 0, .5);
-
   padding: 2rem;
 
   text-align: left;
 
-  span.heading {
-    font-family: 'Oswald', sans-serif;
-    font-size: 12px;
-    text-transform: uppercase;
-    color: #888;
-    font-weight: 400;
-    letter-spacing: 5px;
-  }
-
-  h2.heading {
-    color: #101010;
-    font-family: 'Oswald', sans-serif;
+  .heading {
+    border-left: 6px solid #E3872D;
+    padding-left: 1.5em;
+    font-family: 'Montserrat', sans-serif;
     margin-bottom: 30px;
-    font-weight: 500;
-    font-size: 30px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-  }
 
-  .light,
+    span {
+      font-size: 12px;
+      text-transform: uppercase;
+      color: #888;
+      font-weight: 400;
+      letter-spacing: 5px;
+    }
+
+    h2 {
+      color: #101010;
+      font-weight: 500;
+      font-size: 30px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin: 0;
+    }
+  }
+}
+
+.ant-layout-content {
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+
   &:nth-child(odd) {
     background: white;
   }
 
-  .dark, &:nth-child(even) {
-    background: ghostwhite;
+  &:nth-child(even) {
+    background: #f7f7f7;
   }
+}
+
+.ant-layout-footer {
+  color: ghostwhite;
+  background: #303030;
 }
