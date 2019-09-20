@@ -1,27 +1,50 @@
 <template>
-    <div class="home">
-        <Banner></Banner>
-        <Menu></Menu>
-        <Information></Information>
-        <Footer></Footer>
-    </div>
+    <a-layout>
+        <a-layout-header class="header">
+            <Banner></Banner>
+        </a-layout-header>
+        <a-layout>
+            <a-affix>
+            <a-layout-sider breakpoint="md" collapsedWidth="0">
+                <Menu></Menu>
+            </a-layout-sider>
+            </a-affix>
+            <a-layout>
+                <a-layout-content>
+                    <About></About>
+                </a-layout-content>
+                <a-layout-footer>
+                    <Footer></Footer>
+                </a-layout-footer>
+            </a-layout>
+        </a-layout>
+    </a-layout>
 </template>
 
 <script lang="ts">
     import {Component, Vue} from 'vue-property-decorator';
     import Banner from '@/components/Banner.vue';
     import Menu from '@/components/Menu.vue';
-    import About from '@/components/Abount.vue';
+    import About from '@/components/About.vue';
     import Footer from '@/components/Footer.vue';
 
     @Component({
         components: {
             Banner,
             Menu,
-            Information: About,
+            About,
             Footer,
         },
     })
     export default class Home extends Vue {
     }
 </script>
+
+<style scoped lang="scss">
+    .header {
+        z-index: 0;
+        height: 100vh;
+        overflow: auto;
+        padding: 0;
+    }
+</style>

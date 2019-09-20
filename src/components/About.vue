@@ -1,6 +1,12 @@
 <template>
     <div class="content about" id="about">
-        <a-alert :showIcon="false" message="敬请期待" style="margin-bottom: 2rem;"/>
+        <a-row>
+            <a-col :span="24"><span class="heading">Information</span></a-col>
+        </a-row>
+        <a-row>
+            <a-col :span="24"><h2 class="heading">About Me</h2></a-col>
+        </a-row>
+        <a-skeleton data-aos="fade-right" active avatar :paragraph="{rows: 4}" />
         <a-skeleton data-aos="fade-right" active avatar :paragraph="{rows: 4}" />
         <a-skeleton data-aos="fade-right" active avatar :paragraph="{rows: 4}" />
         <a-skeleton data-aos="fade-right" active avatar :paragraph="{rows: 4}" />

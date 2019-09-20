@@ -1,7 +1,7 @@
 <template>
     <div class="banner" id="banner">
         <div class="bg"></div>
-        <div class="desc">
+        <div data-aos="fade-up" class="desc">
             <span class="avatar ant-avatar ant-avatar-circle ant-avatar-image">
                 <img draggable="false" src="../assets/avatar.jpg">
             </span>
@@ -44,8 +44,8 @@
         position: relative;
         justify-content: center;
         align-items: center;
-        width: 100%;
-        height: 100vh;
+        width: 100vw;
+        height: 100%;
 
         .bg {
             position: absolute;
@@ -53,7 +53,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: -2;
+            z-index: -1;
             background: rgb(0, 0, 0) url("../assets/bg_banner.jpg") no-repeat center center fixed;
             background-size: cover;
         }

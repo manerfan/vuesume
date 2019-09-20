@@ -23,12 +23,22 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 AOS.init({
     once: true, // 只展示一次动画
+    offset: 100,
+    delay: 100,
+    duration: 1000,
 });
 
 Vue.config.productionTip = false;
 
 Vue.use(Antd);
 Vue.use(VueSmoothScroll);
+
+router.beforeEach((to, from, next) => {
+    if (to.meta.title) {
+        document.title = store.getters.title(to.meta.title);
+    }
+    next();
+});
 
 new Vue({
     router,
@@ -37,9 +47,3 @@ new Vue({
 }).$mount('#app');
 
 store.dispatch('init');
-router.beforeEach((to, from, next) => {
-    if (to.meta.title) {
-        document.title = store.getters.title(to.meta.title);
-    }
-    next();
-});

@@ -1,16 +1,12 @@
 <template>
-    <div class="menu">
-        <a-affix>
-            <a-menu mode="horizontal" :selectable="false" theme="dark">
-                <a-menu-item>
-                    <a href="#banner" v-smooth-scroll><a-icon type="home" />Home</a>
-                </a-menu-item>
-                <a-menu-item>
-                    <a href="#about" v-smooth-scroll><a-icon type="user" />About Me</a>
-                </a-menu-item>
-            </a-menu>
-        </a-affix>
-    </div>
+    <a-layout>
+        <a-layout-content>
+
+        </a-layout-content>
+        <a-layout-footer>
+
+        </a-layout-footer>
+    </a-layout>
 </template>
 
 <script lang="ts">
@@ -29,5 +25,6 @@
 
 <style scoped lang="scss">
     @import '../styles/variable';
+
 
 </style>

@@ -21,10 +21,33 @@ body {
 
   padding: 2rem;
 
-  .light {
+  text-align: left;
 
+  span.heading {
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #888;
+    font-weight: 400;
+    letter-spacing: 5px;
   }
-  .dark {
-    background: #f7f7f7;
+
+  h2.heading {
+    color: #101010;
+    font-family: 'Oswald', sans-serif;
+    margin-bottom: 30px;
+    font-weight: 500;
+    font-size: 30px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+
+  .light,
+  &:nth-child(odd) {
+    background: white;
+  }
+
+  .dark, &:nth-child(even) {
+    background: ghostwhite;
   }
 }
