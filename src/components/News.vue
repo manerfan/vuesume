@@ -1,9 +1,8 @@
+<!-- 最近的文章 -->
+
 <template>
     <div class="content news" id="news">
-        <div class="heading">
-            <a-row><a-col :span="24"><span>News</span></a-col></a-row>
-            <a-row><a-col :span="24"><h2>Latest News</h2></a-col></a-row>
-        </div>
+        <ContentTitle title="News" sub-title="Latest News" />
         <a-skeleton data-aos="fade-right" active avatar :paragraph="{rows: 4}" />
         <a-skeleton data-aos="fade-right" active avatar :paragraph="{rows: 4}" />
         <a-skeleton data-aos="fade-right" active avatar :paragraph="{rows: 4}" />
@@ -13,10 +12,12 @@
 
 <script lang="ts">
     import {Component, Vue} from 'vue-property-decorator';
+    import ContentTitle from '@/components/content/ContentTitle.vue';
     import {mapGetters} from 'vuex';
 
     @Component({
         components: {
+            ContentTitle,
         },
         computed: {
             ...mapGetters([]),

@@ -24,32 +24,7 @@ body {
 
 .content {
   padding: 2rem;
-
   text-align: left;
-
-  .heading {
-    border-left: 6px solid #E3872D;
-    padding: .5em 0 0 1.5em;
-    font-family: 'Montserrat', sans-serif;
-    margin-bottom: 30px;
-
-    span {
-      font-size: 12px;
-      text-transform: uppercase;
-      color: #888;
-      font-weight: 400;
-      letter-spacing: 5px;
-    }
-
-    h2 {
-      color: #101010;
-      font-weight: 500;
-      font-size: 30px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      margin: 0;
-    }
-  }
 }
 
 /* 隐藏Layout.Sider (menu) 的按钮，自己实现  */
@@ -68,11 +43,11 @@ body {
 }
 
 .ant-layout-content {
-  &:nth-child(even) {
+  &:nth-child(odd) {
     background: #fdfdfd;
   }
 
-  &:nth-child(odd) {
+  &:nth-child(even) {
     background: #f7f7f7;
   }
 }

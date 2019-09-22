@@ -34,17 +34,16 @@ Vue.config.productionTip = false;
 Vue.use(Antd);
 Vue.use(VueSmoothScroll);
 
-router.beforeEach((to, from, next) => {
-    if (to.meta.title) {
-        document.title = store.getters.title(to.meta.title);
-    }
-    next();
-});
-
 new Vue({
     router,
     store,
     render: (h) => h(App),
 }).$mount('#app');
 
+router.beforeEach((to, from, next) => {
+    if (to.meta.title) {
+        document.title = store.getters.title(to.meta.title);
+    }
+    next();
+});
 store.dispatch('init');

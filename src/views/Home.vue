@@ -1,18 +1,25 @@
+<!-- 整体的框架 -->
+
 <template>
     <a-layout>
+        <!-- 首屏 -->
         <a-layout-header class="layout-header"><Banner/></a-layout-header>
+        <!-- 内容 -->
         <a-layout>
-            <a-layout-sider class="layout-sider" width="320">
-                <Menu/>
-            </a-layout-sider>
+            <!-- 菜单 -->
+            <a-layout-sider class="layout-sider" width="320"><Menu/></a-layout-sider>
+            <!-- 正文部分 -->
             <a-layout class="layout-content">
                 <!-- 小屏侧边栏抽屉按钮 -->
                 <a-affix>
                     <a-button :class="{'sider-menu-trigger': true, 'drawer-closed': !menuDrawerVisible, 'drawer-open': menuDrawerVisible}"
                             shape="circle" size="large" :icon="menuDrawerVisible ? 'arrow-left' : 'bars'" @click="toggleMenuDrawer"></a-button>
                 </a-affix>
+                <!-- 正文锚点 -->
+                <a-layout-content><div id="anchor-next"></div></a-layout-content>
                 <a-layout-content><About/></a-layout-content>
                 <a-layout-content><News/></a-layout-content>
+                <!-- 页脚 -->
                 <a-layout-footer><Footer/></a-layout-footer>
             </a-layout>
         </a-layout>

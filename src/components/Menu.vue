@@ -1,12 +1,16 @@
+<!-- 菜单 -->
+
 <template>
     <a-affix>
         <a-layout class="layout-menu">
+            <!-- 头像 -->
             <div class="header">
                 <span class="avatar ant-avatar ant-avatar-circle ant-avatar-image">
                     <img draggable="false" src="../assets/avatar.jpg">
                 </span>
                 <span>{{banner.title}}</span>
             </div>
+            <!-- 菜单 -->
             <a-layout-content class="menu">
                 <a-menu>
                     <a-menu-item>
@@ -23,25 +27,15 @@
                     </a-menu-item>
                 </a-menu>
             </a-layout-content>
+            <!-- 菜单页脚 -->
             <a-layout-footer class="footer">
+                <!-- 社交 -->
                 <a-row type="flex" justify="center" align="middle" :gutter="2">
-                    <a-col span="24">
-                        <a href="https://github.com/manerfan" target="_blank"><a-icon type="github" /></a>
-                        <a-popover arrowPointAtCenter>
-                            <template slot="content">
-                                <img style="width: 360px; max-width: 80vw; height: auto;" src="https://mmbiz.qpic.cn/mmbiz_png/UTKaj6IibSJeVf4kvWV3NIDTtwoAeq9EZZgSpSnIUVjpSlibFXlIz5YgPrNgmocqN0MttcNrZAZRO6o8vT2zB04Q/0?wx_fmt=png">
-                            </template>
-                            <a><a-icon type="wechat" /></a>
-                        </a-popover>
-                        <a href="https://twitter.com/manerfan_china" target="_blank"><a-icon type="twitter" /></a>
-                        <a href="https://www.linkedin.com/in/%E6%B0%B8%E6%B0%B8-%E6%A8%8A-705071104/" target="_blank"><a-icon type="linkedin" /></a>
-                    </a-col>
+                    <a-col span="24"><Social color="rgb(136,136,136)" :size="1.2"/></a-col>
                 </a-row>
+                <!-- 版权 -->
                 <a-row type="flex" justify="center" align="middle" :gutter="2">
-                    <a-col span="24">
-                        <a class="copy-rights" href="https://github.com/manerfan/vuesume/blob/master/LICENSE" target="_blank" style="font-size: 1em;">
-                            © 2019 Maner·Fan All rights reserved</a>
-                    </a-col>
+                    <a-col span="24"><Copyrights color="rgb(136,136,136)" :size=".6"/></a-col>
                 </a-row>
             </a-layout-footer>
         </a-layout>
@@ -50,10 +44,15 @@
 
 <script lang="ts">
     import {Component, Vue} from 'vue-property-decorator';
+    import Copyrights from '@/components/footer/Copyrights.vue';
+    import Social from '@/components/footer/Social.vue';
     import {mapGetters} from 'vuex';
 
     @Component({
-        components: {},
+        components: {
+            Copyrights,
+            Social,
+        },
         computed: {
             ...mapGetters(['banner']),
         },
@@ -72,6 +71,10 @@
         width: 100%;
         height: 100vh;
         text-align: center;
+
+        .header, .menu, .footer {
+            background-color: white !important;
+        }
 
         .header {
             margin: 2rem auto;
@@ -108,15 +111,6 @@
 
             & > div {
                 margin: .5rem auto;
-            }
-
-            a {
-                font-size: 1.2em;
-                margin: 0.5em;
-
-                &.copy-rights {
-                    font-size: .6em !important;
-                }
             }
         }
     }

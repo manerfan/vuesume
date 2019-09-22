@@ -1,19 +1,26 @@
+<!-- 首屏banner -->
+
 <template>
     <div class="banner" id="banner">
-        <div class="bg-bottom">
-            <h1 class="animated infinite pulse">加载中...</h1>
-        </div>
-        <div class="bg"></div>
+        <!-- 加载层 -->
+        <div class="bg"><h1 class="animated infinite pulse">林小二奋笔疾书...</h1></div>
+        <!-- 脚贴 -->
         <div class="fork-me">
-            <a class="fork-me-link" href="https://github.com/manerfan/vuesume">
-                <span class="fork-me-text">Docs On GitHub</span>
-            </a>
+            <a-popover arrowPointAtCenter placement="left">
+                <template slot="content"><Badge/></template>
+                <a class="fork-me-link" href="https://github.com/manerfan/vuesume" target="_blank">
+                    <span class="fork-me-text">Docs On GitHub</span>
+                </a>
+            </a-popover>
         </div>
+        <!-- 背景层 -->
+        <div data-aos="fade-in" class="bg"></div>
+        <!-- 内容层 -->
         <div data-aos="fade-in" class="desc">
             <span class="avatar ant-avatar ant-avatar-circle ant-avatar-image">
                 <img draggable="false" src="../assets/avatar.jpg">
             </span>
-            <div data-aos="fade-in">
+            <div>
                 <h1>{{banner.title}}</h1>
                 <h3 class="typer-white">
                     鄙人，
@@ -21,7 +28,7 @@
                 </h3>
             </div>
         </div>
-        <a data-aos="fade-in" class="scroll-next animated infinite bounce" href="#about" v-smooth-scroll>
+        <a data-aos="fade-in" class="scroll-next animated infinite bounce" href="#anchor-next" v-smooth-scroll>
             <a-icon type="double-right"/>
         </a>
     </div>
@@ -37,6 +44,7 @@
     @Component({
         components: {
             VueTyper,
+            Badge: () => import('@/components/footer/Badge.vue'),
         },
         computed: {
             ...mapGetters(['banner']),
@@ -58,23 +66,6 @@
         width: 100vw;
         height: 100%;
 
-        .bg-bottom, .bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -2;
-        }
-
-        .bg-bottom {
-            background-color: #fff0e6;
-            h1 {
-                display: none;
-                margin-top: 40vh;
-            }
-        }
-
         .bg {
             position: absolute;
             top: 0;
@@ -82,8 +73,16 @@
             width: 100%;
             height: 100%;
             z-index: -1;
-            background: rgb(0, 0, 0) url("../assets/bg_banner.jpg") no-repeat center center fixed;
+            background: $--color-cyan url("../assets/bg_banner.jpg") no-repeat center center fixed;
             background-size: cover;
+
+            h1 {
+                display: block;
+                margin-top: 45vh;
+                color: $--font-color;
+                font-size: 2em;
+                text-shadow: 0 0 5px $--color-gray;
+            }
         }
 
         .desc {
