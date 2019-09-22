@@ -1,22 +1,27 @@
 <template>
     <div class="banner" id="banner">
+        <div class="bg-bottom">
+            <h1 class="animated infinite pulse">加载中...</h1>
+        </div>
         <div class="bg"></div>
         <div class="fork-me">
             <a class="fork-me-link" href="https://github.com/manerfan/vuesume">
                 <span class="fork-me-text">Docs On GitHub</span>
             </a>
         </div>
-        <div class="desc">
+        <div data-aos="fade-in" class="desc">
             <span class="avatar ant-avatar ant-avatar-circle ant-avatar-image">
                 <img draggable="false" src="../assets/avatar.jpg">
             </span>
-            <h1>{{banner.title}}</h1>
-            <h3 class="typer-white">
-                鄙人，
-                <vue-typer :text='banner.desc' :type-delay='200' eraseStyle='select-all'></vue-typer>
-            </h3>
+            <div data-aos="fade-in">
+                <h1>{{banner.title}}</h1>
+                <h3 class="typer-white">
+                    鄙人，
+                    <vue-typer :text='banner.desc' :type-delay='200' eraseStyle='select-all'></vue-typer>
+                </h3>
+            </div>
         </div>
-        <a class="scroll-next animated infinite bounce" href="#about" v-smooth-scroll>
+        <a data-aos="fade-in" class="scroll-next animated infinite bounce" href="#about" v-smooth-scroll>
             <a-icon type="double-right"/>
         </a>
     </div>
@@ -52,6 +57,23 @@
         align-items: center;
         width: 100vw;
         height: 100%;
+
+        .bg-bottom, .bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+        }
+
+        .bg-bottom {
+            background-color: #fff0e6;
+            h1 {
+                display: none;
+                margin-top: 40vh;
+            }
+        }
 
         .bg {
             position: absolute;
