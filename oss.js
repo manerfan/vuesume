@@ -65,7 +65,7 @@ WebpackAliyunOssPlugin.prototype.apply = function (compiler) {
 
         function upload(file, times) {
             var source = compilation.assets[file].source();
-            var body = Buffer.isBuffer(source) ? source : new Buffer(source, 'utf8');
+            var body = Buffer.isBuffer(source) ? source : Buffer.from(source, 'utf8');
             return me.client.put(file, body, {
                 timeout: 30 * 1000
             }).then(function () {

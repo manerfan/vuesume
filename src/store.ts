@@ -5,7 +5,7 @@ import {UserData} from '@/api/interfaces';
 
 Vue.use(Vuex);
 
-const DEFAULT_TITLE = 'vuesume';
+const DEFAULT_TITLE = '林舍';
 const DEFAULT_CONTENT = '--';
 
 export default new Vuex.Store({
@@ -15,19 +15,13 @@ export default new Vuex.Store({
             title: DEFAULT_CONTENT,
             desc: [DEFAULT_CONTENT],
         },
-        const: {
-          wechatImgUrl: 'https://mmbiz.qpic.cn/mmbiz_png/UTKaj6IibSJeVf4kvWV3NIDTtwoAeq9EZZgSpSnIUVjpSlibFXlIz5YgPrNgmocqN0MttcNrZAZRO6o8vT2zB04Q/0?wx_fmt=png',
-        },
     },
     getters: {
-        title(state, content): string {
-          return `${state.title || DEFAULT_TITLE} - ${content || ''}`;
+        title(state): string {
+          return state.title || DEFAULT_TITLE;
         },
         banner(state): object {
             return state.banner || {};
-        },
-        const(state): object {
-            return state.const || {};
         },
     },
     mutations: {
