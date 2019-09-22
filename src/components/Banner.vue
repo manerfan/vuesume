@@ -1,11 +1,16 @@
 <template>
     <div class="banner" id="banner">
         <div class="bg"></div>
-        <div data-aos="fade-up" class="desc">
+        <div class="fork-me">
+            <a class="fork-me-link" href="https://github.com/manerfan/vuesume">
+                <span class="fork-me-text">Docs On GitHub</span>
+            </a>
+        </div>
+        <div class="desc">
             <span class="avatar ant-avatar ant-avatar-circle ant-avatar-image">
                 <img draggable="false" src="../assets/avatar.jpg">
             </span>
-            <h1>{{banner.title}}</h1>a
+            <h1>{{banner.title}}</h1>
             <h3 class="typer-white">
                 鄙人，
                 <vue-typer :text='banner.desc' :type-delay='200' eraseStyle='select-all'></vue-typer>
@@ -38,6 +43,7 @@
 
 <style scoped lang="scss">
     @import '../styles/variable';
+    @import '../styles/fork';
 
     .banner {
         display: flex;
@@ -77,15 +83,25 @@
             }
 
             h1 {
-                font-size: 3rem;
+                font-size: 3em;
                 margin: 3rem auto 1rem;
             }
 
             h3 {
-                font-size: 1.5rem;
+                font-size: 1.5em;
 
                 .vue-typer {
                     display: inline-block;
+                }
+            }
+
+            @media screen and (max-width: $--screen-sm-min) {
+                h1 {
+                    font-size: 2.3em;
+                }
+
+                h3 {
+                    font-size: 1.3em;
                 }
             }
         }

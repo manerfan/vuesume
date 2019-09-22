@@ -27,6 +27,7 @@
     "config-file-loader": "^1.0.0",
     "json5": "^2.1.0",
     "node-sass": "^4.9.0",
+    "sass": "^1.22.12",
     "sass-loader": "^8.0.0",
     "typescript": "^3.4.3",
     "underscore": "^1.8.3",

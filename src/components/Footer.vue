@@ -1,19 +1,19 @@
 <template>
     <a-row class="footer" type="flex" justify="center" align="middle" :gutter="2">
-        <a-col :xs="24" :sm="8" :md="6" :lg="4" :xl="4">
+        <a-col :xs="24" :sm="8" :md="6" :lg="6" :xl="6">
             <a href="https://github.com/manerfan/vuesume/blob/master/LICENSE" target="_blank" style="font-size: 1em;">
                 © 2019 Maner·Fan All rights reserved</a>
         </a-col>
-        <a-col :xs="24" :sm="6" :md="4" :lg="2" :xl="4">
+        <a-col :xs="24" :sm="6" :md="4" :lg="4" :xl="4">
             <span class="avatar ant-avatar ant-avatar-circle ant-avatar-image">
                 <img draggable="false" src="../assets/avatar.jpg">
             </span>
         </a-col>
-        <a-col class="social" :xs="24" :sm="8" :md="6" :lg="4" :xl="4">
-            <a href="https://github.com/manerfan/vuesume" target="_blank"><a-icon type="github" /></a>
+        <a-col class="social" :xs="24" :sm="8" :md="6" :lg="6" :xl="6">
+            <a href="https://github.com/manerfan" target="_blank"><a-icon type="github" /></a>
             <a-popover arrowPointAtCenter>
                 <template slot="content">
-                    <img style="width: 360px; max-width: 80vw; height: auto;" src="../assets/wechat.png">
+                    <img style="width: 360px; max-width: 80vw; height: auto;" src="https://mmbiz.qpic.cn/mmbiz_png/UTKaj6IibSJeVf4kvWV3NIDTtwoAeq9EZZgSpSnIUVjpSlibFXlIz5YgPrNgmocqN0MttcNrZAZRO6o8vT2zB04Q/0?wx_fmt=png">
                 </template>
                 <a><a-icon type="wechat" /></a>
             </a-popover>
@@ -63,6 +63,7 @@
         }
 
         color: ghostwhite;
+        background: #303030;
 
         a {
             font-size: 1.5em;

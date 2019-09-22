@@ -10,9 +10,6 @@ import 'ant-design-vue/dist/antd.css';
 // 动画
 import 'animate.css';
 
-import './styles/main.scss';
-import './styles/typer.scss';
-
 // 平滑滚动
 // tslint:disable-next-line:no-var-requires
 import VueSmoothScroll from 'vue2-smooth-scroll';
@@ -23,10 +20,14 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 AOS.init({
     once: true, // 只展示一次动画
-    offset: 100,
+    offset: 50,
     delay: 100,
     duration: 1000,
 });
+
+// 自定义样式
+import './styles/main.scss';
+import './styles/typer.scss';
 
 Vue.config.productionTip = false;
 

@@ -9,11 +9,17 @@
     background: $--selection-color;
     color: $--font-color;
   }
+
+  ::-webkit-scrollbar {
+    /*隐藏滚轮*/
+    display: none;
+  }
 }
 
 body {
   margin: 0;
   padding: 0;
+  background: white;
 }
 
 .content {
@@ -23,7 +29,7 @@ body {
 
   .heading {
     border-left: 6px solid #E3872D;
-    padding-left: 1.5em;
+    padding: .5em 0 0 1.5em;
     font-family: 'Montserrat', sans-serif;
     margin-bottom: 30px;
 
@@ -46,14 +52,27 @@ body {
   }
 }
 
-.ant-layout-content {
-  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+/* 隐藏Layout.Sider (menu) 的按钮，自己实现  */
+.ant-layout-sider-zero-width-trigger {
+  display: none;
+}
 
-  &:nth-child(odd) {
+.ant-layout, .ant-layout-sider, .ant-layout-content, .ant-layout-header {
+  background: white;
+}
+
+.ant-layout-sider {
+  .ant-layout-content, .ant-layout-header, .ant-layout-footer {
     background: white;
   }
+}
 
+.ant-layout-content {
   &:nth-child(even) {
+    background: #fdfdfd;
+  }
+
+  &:nth-child(odd) {
     background: #f7f7f7;
   }
 }
@@ -61,4 +80,30 @@ body {
 .ant-layout-footer {
   color: ghostwhite;
   background: #303030;
+}
+
+.ant-menu {
+  background: white;
+
+  border: none !important;
+  text-align: left !important;
+  padding: 1rem !important;
+
+  a {
+    color: $--color-gray;
+  }
+
+  .ant-menu-item {
+    border-bottom: 1px dotted $--color-gray;
+    background: transparent !important;
+    color: $--color-gray !important;
+    .ant-menu-item-selected {
+      background: transparent !important;
+      color: $--color-gray !important;
+    }
+  }
+}
+
+.ant-drawer-body {
+  padding: 0;
 }
