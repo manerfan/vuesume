@@ -6,7 +6,7 @@
         <a :style="{color: color}" :href="social['github'] || 'https://github.com/manerfan'" target="_blank"><a-icon type="github" /></a>
         <!-- 微信 -->
         <a-popover arrowPointAtCenter>
-            <template slot="content"><WeChatPopover/></template>
+            <template slot="content"><img style="width: 360px; max-width: 80vw; height: auto;"  alt="林中小舍" src="../../assets/wechat.jpg"/></template>
             <a :style="{color: color}"><a-icon type="wechat" /></a>
         </a-popover>
         <!-- twitter -->
@@ -19,11 +19,9 @@
 <script lang="ts">
     import {Component, Vue} from 'vue-property-decorator';
     import {mapGetters} from 'vuex';
-    import WeChatPopover from '@/components/footer/WeChatPopover.vue';
 
     @Component({
         components: {
-            WeChatPopover,
         },
         props: {
             color: String,

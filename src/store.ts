@@ -1,16 +1,16 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import data from '@/api/data';
-import {Module, UserData} from '@/api/interfaces';
+import {Module, UserData, Banner} from '@/api/interfaces';
 import _ from 'lodash';
 
 Vue.use(Vuex);
 
 const DEFAULT_TITLE = '林舍';
-const DEFAULT_CONTENT = {display: false};
+const DEFAULT_MODULE = {display: false, anchor: {id: '', icon: ''}, header: {title: '', subtitle: ''}};
 
 function find(modules: Module[], id: string) {
-    return _.find(modules, (module) => module.anchor.id === id) || DEFAULT_CONTENT;
+    return _.find(modules, (module) => module.anchor.id === id) || DEFAULT_MODULE;
 }
 
 export default new Vuex.Store<UserData>({
@@ -54,13 +54,13 @@ export default new Vuex.Store<UserData>({
             // 将模块中用于menu的字段抽出
             return _.map(modules, (module) => module.anchor.id);
         },
-        banner(state): object {
+        banner(state): Banner {
             return state.banner || {};
         },
-        about(state): object {
+        about(state): Module {
             return find(state.modules, 'about');
         },
-        blog(state): object {
+        blog(state): Module {
             return find(state.modules, 'blog');
         },
     },

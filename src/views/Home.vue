@@ -19,8 +19,8 @@
                 <a-layout-content><div id="anchor-next"></div></a-layout-content>
                 <!-- 根据配置动态模块的内容和顺序 -->
                 <a-layout-content v-for="id in moduleIds" v-bind:key="id">
-                    <About v-if="id === 'about'" />
-                    <Blog  v-if ="id === 'blog'"/>
+                    <About v-if="id === 'about'"/>
+                    <Blog v-if="id === 'blog'"/>
                 </a-layout-content>
                 <!-- 页脚 -->
                 <a-layout-footer><Footer/></a-layout-footer>
