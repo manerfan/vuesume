@@ -8,22 +8,15 @@
                 <span class="avatar ant-avatar ant-avatar-circle ant-avatar-image">
                     <img draggable="false" src="../assets/avatar.jpg">
                 </span>
-                <span>{{banner.title}}</span>
+                <span>{{banner.name|| '林中小舍'}}</span>
             </div>
             <!-- 菜单 -->
             <a-layout-content class="menu">
                 <a-menu>
-                    <a-menu-item>
-                        <a-icon type="home" />
-                        <a v-smooth-scroll href="#banner" @click="closeMenuDrawer">Home</a>
-                    </a-menu-item>
-                    <a-menu-item>
-                        <a-icon type="user" />
-                        <a v-smooth-scroll href="#about" @click="closeMenuDrawer">About</a>
-                    </a-menu-item>
-                    <a-menu-item>
-                        <a-icon type="notification" />
-                        <a v-smooth-scroll href="#news" @click="closeMenuDrawer">News</a>
+                    <!-- 根据配置动态模块的内容和顺序 -->
+                    <a-menu-item v-for="m in menus" v-bind:key="m.id">
+                        <a-icon :type="m.icon" />
+                        <a v-smooth-scroll :href="'#' + m.id" @click="closeMenuDrawer">{{m.title}}</a>
                     </a-menu-item>
                 </a-menu>
             </a-layout-content>
@@ -54,7 +47,7 @@
             Social,
         },
         computed: {
-            ...mapGetters(['banner']),
+            ...mapGetters(['banner', 'menus']),
         },
     })
     export default class Menu extends Vue {

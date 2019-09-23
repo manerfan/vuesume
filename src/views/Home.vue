@@ -17,8 +17,11 @@
                 </a-affix>
                 <!-- 正文锚点 -->
                 <a-layout-content><div id="anchor-next"></div></a-layout-content>
-                <a-layout-content><About/></a-layout-content>
-                <a-layout-content><News/></a-layout-content>
+                <!-- 根据配置动态模块的内容和顺序 -->
+                <a-layout-content v-for="id in moduleIds" v-bind:key="id">
+                    <About v-if="id === 'about'" />
+                    <Blog  v-if ="id === 'blog'"/>
+                </a-layout-content>
                 <!-- 页脚 -->
                 <a-layout-footer><Footer/></a-layout-footer>
             </a-layout>
@@ -33,11 +36,12 @@
 
 <script lang="ts">
     import {Component, Vue} from 'vue-property-decorator';
+    import {mapGetters} from 'vuex';
 
     import Banner from '@/components/Banner.vue';
     import Menu from '@/components/Menu.vue';
     import About from '@/components/About.vue';
-    import News from '@/components/News.vue';
+    import Blog from '@/components/Blog.vue';
     import Footer from '@/components/Footer.vue';
 
     @Component({
@@ -45,8 +49,11 @@
             Banner,
             Menu,
             About,
-            News,
+            Blog,
             Footer,
+        },
+        computed: {
+            ...mapGetters(['moduleIds']),
         },
     })
     export default class Home extends Vue {

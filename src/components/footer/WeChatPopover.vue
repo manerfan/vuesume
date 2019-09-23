@@ -2,7 +2,7 @@
 <!-- 此为license的一部分 -->
 
 <template>
-    <img style="width: 360px; max-width: 80vw; height: auto;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA1IAAADzCAIAAAAD7LCGAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A
+    <img style="width: 360px; max-width: 80vw; height: auto;"  alt="林中小舍" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA1IAAADzCAIAAAAD7LCGAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A
 /wD/oL2nkwAAAAlwSFlzAAALEgAACxIB0t1+/AAAgABJREFUeNrsfXecXVXV9tr7lNvv9JaZZNIL
 JpQkhBJ6D6igAgqCoNIRVJCqvhbkFYFPBF87r+CrIiqIiiAI0lvABBJIA0J6m3Z7Pefs/f3xcJeH
 yczIxCBRzvojv8nMvafsc/baz37WWs8SnudRYIH9B5kQwvO8arWqlJJSEpHnefghsMACCyywwN6b
@@ -1643,7 +1643,7 @@ AAAAOHRFWHRpY2M6Y29weXJpZ2h0AENvcHlyaWdodCAoYykgMTk5OCBIZXdsZXR0LVBhY2thcmQg
 Q29tcGFueflXeTcAAAAhdEVYdGljYzpkZXNjcmlwdGlvbgBzUkdCIElFQzYxOTY2LTIuMVet2kcA
 AAAmdEVYdGljYzptYW51ZmFjdHVyZXIASUVDIGh0dHA6Ly93d3cuaWVjLmNoHH8ATAAAADd0RVh0
 aWNjOm1vZGVsAElFQyA2MTk2Ni0yLjEgRGVmYXVsdCBSR0IgY29sb3VyIHNwYWNlIC0gc1JHQkRT
-SKkAAAAASUVORK5CYII=" />
+SKkAAAAASUVORK5CYII="/>
 </template>
 
 <script lang="ts">

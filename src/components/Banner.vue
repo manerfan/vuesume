@@ -6,12 +6,9 @@
         <div class="bg"><h1 class="animated infinite pulse">林小二奋笔疾书...</h1></div>
         <!-- 脚贴 -->
         <div class="fork-me">
-            <a-popover arrowPointAtCenter placement="left">
-                <template slot="content"><Badge/></template>
-                <a class="fork-me-link" href="https://github.com/manerfan/vuesume" target="_blank">
-                    <span class="fork-me-text">Docs On GitHub</span>
-                </a>
-            </a-popover>
+            <a class="fork-me-link" href="https://github.com/manerfan/vuesume" target="_blank">
+                <span class="fork-me-text">Docs On GitHub</span>
+            </a>
         </div>
         <!-- 背景层 -->
         <div data-aos="fade-in" class="bg"></div>
@@ -21,10 +18,10 @@
                 <img draggable="false" src="../assets/avatar.jpg">
             </span>
             <div>
-                <h1>{{banner.title}}</h1>
+                <h1>{{banner.name || '林中小舍'}}</h1>
                 <h3 class="typer-white">
                     鄙人，
-                    <vue-typer :text='banner.desc' :type-delay='200' eraseStyle='select-all'></vue-typer>
+                    <vue-typer :text="banner.desc || '林舍'" :type-delay='200' eraseStyle='select-all'></vue-typer>
                 </h3>
             </div>
         </div>

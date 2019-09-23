@@ -1,7 +1,7 @@
 <!-- 最近的文章 -->
 
 <template>
-    <div class="content news" id="news">
+    <div class="content news" id="blog">
         <ContentTitle title="News" sub-title="Latest News" />
         <a-skeleton data-aos="fade-right" active avatar :paragraph="{rows: 4}" />
         <a-skeleton data-aos="fade-right" active avatar :paragraph="{rows: 4}" />
@@ -23,7 +23,7 @@
             ...mapGetters([]),
         },
     })
-    export default class News extends Vue {
+    export default class Blog extends Vue {
     }
 </script>
 

@@ -1,13 +1,61 @@
 {
+  // 页面title
   title: "林舍",
+  // 社交链接
+  social: {
+    github: "https://github.com/manerfan",
+    twitter: "https://twitter.com/manerfan_china",
+    linkedin: "https://www.linkedin.com/in/%E6%B0%B8%E6%B0%B8-%E6%A8%8A-705071104/",
+  },
+  // banner页
   banner: {
-    title: "林中小舍",
+    anchor: {
+      id: "banner",
+      icon: "home",
+    },
+    header: {
+      title: "home",
+      subtitle: "home",
+    },
+    name: "林中小舍",
     desc: [
       "北方汉子",
       "宝爸一颗",
       "码农一枚",
       "花名林舍",
-      "工作五六载"
-    ]
-  }
+      "工作五六载",
+    ],
+  },
+  // 正文
+  // 不要修改各模块的 anchor.id
+  // 通过display控制模块是否展示
+  // 通过列表顺序控制模块展示顺序
+  modules: [
+    // 关于页
+    {
+      display: true,
+      anchor: {
+        id: "about",
+        icon: "user",
+      },
+      header: {
+        title: "about",
+        subtitle: "about me",
+      },
+    },
+    // 博客页
+    {
+      display: true,
+      anchor: {
+        id: "blog",
+        icon: "profile",
+      },
+      header: {
+        title: "blog",
+        subtitle: "latest blog",
+      },
+      // RSS订阅
+      rss: "https://segmentfault.com/feeds/blog/manerfan",
+    },
+  ],
 }
