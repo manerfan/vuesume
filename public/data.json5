@@ -14,7 +14,7 @@
       icon: "home",
     },
     header: {
-      title: "home",
+      title: "Home",
       subtitle: "home",
     },
     name: "林中小舍",
@@ -39,7 +39,7 @@
         icon: "user",
       },
       header: {
-        title: "about",
+        title: "About",
         subtitle: "about me",
       },
     },
@@ -51,7 +51,7 @@
         icon: "profile",
       },
       header: {
-        title: "blog",
+        title: "Blog",
         subtitle: "latest blog",
       },
       // RSS订阅

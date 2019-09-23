@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import data from '@/api/data';
-import {Module, UserData, Banner} from '@/api/interfaces';
+import api from '@/api';
+import {Module, UserData, Banner} from '@/api/user_interface';
 import _ from 'lodash';
 
 Vue.use(Vuex);
@@ -74,7 +74,7 @@ export default new Vuex.Store<UserData>({
     },
     actions: {
         init({commit}) {
-            data.init((userData: UserData) => {
+            api.init((userData: UserData) => {
                 commit('init', userData);
             });
         },

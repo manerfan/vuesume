@@ -15,7 +15,7 @@
     import ContentTitle from '@/components/content/ContentTitle.vue';
     import {mapGetters} from 'vuex';
 
-    import axios from 'axios';
+    import api from '@/api';
 
     @Component({
         components: {
@@ -37,16 +37,19 @@
         },
     })
     export default class Blog extends Vue {
-        private parser = new Parser();
-
         private initBlog(rss?: string) {
             if (!rss) {
                 return;
             }
 
-            axios.get<string>(rss).then(({data}) => {
-                console.log(data)
-            });
+            api.rss(
+                rss,
+                (r) => {
+                    console.log(r);
+                },
+                (e) => {
+                    console.error(e);
+                });
         }
     }
 </script>
