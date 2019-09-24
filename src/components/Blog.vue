@@ -4,11 +4,11 @@
     <div class="content blog" id="blog">
         <ModuleHeader :title="blog.header.title" :sub-title="blog.header.subtitle"/>
         <ModuleSkeleton :display="loading" :number="2"/>
-        <a-list itemLayout="vertical" size="large" :dataSource="(rss || {}).items || []">
+        <a-list v-if="!loading" itemLayout="vertical" size="large" :dataSource="((rss || {}).items || []).slice(0, 10)">
             <a-list-item slot="renderItem" slot-scope="item, index" key="item.guid">
                 <a-list-item-meta>
                     <a-avatar slot="avatar" :src="item.thumbnail" icon="book" />
-                    <a class="title" slot="title" :href="item.link" target="_blank">{{item.title}}</a>
+                    <a class="title" slot="title" :href="item.link" target="_blank">{{decode(item.title)}}</a>
                     <template slot="description">
                         <div class="description">
                             <a :href="item.link" target="_blank">{{item.author}}</a>
@@ -17,7 +17,7 @@
                         </div>
                     </template>
                 </a-list-item-meta>
-                <span class="desc">{{desc(index).substr(0, 120)}} ...</span>
+                <span class="desc">{{decode(item.description).substr(0, 120)}} ...</span>
             </a-list-item>
         </a-list>
     </div>
@@ -30,7 +30,7 @@
     import {mapGetters} from 'vuex';
 
     import api from '@/api';
-    import {Rss} from "@/api/rss_interface";
+    import {Rss} from '@/api/rss_interface';
 
     @Component({
         components: {
@@ -45,20 +45,20 @@
         },
         watch: {
             getRss(rss) {
-                this.initBlog(rss);
-            }
+                (this as any).initBlog(rss);
+            },
         },
         created() {
-            this.initBlog(this.$store.getters.blog.rss);
+            (this as any).initBlog(this.$store.getters.blog.rss);
         },
     })
     export default class Blog extends Vue {
         private loading = true;
         private rss: Rss = {};
 
-        private desc(index: number) {
-            const el = document.createElement('desc' + index);
-            el.innerHTML = ((this.rss || {}).items || [])[index].description;
+        private decode(content: string) {
+            const el = document.createElement(`el-${new Date().getTime()}`);
+            el.innerHTML = content;
             return el.innerText;
         }
 
@@ -78,7 +78,7 @@
                     this.loading = false;
                 },
                 (e) => {
-                    console.error(e);
+                    this.loading = true;
                 });
         }
     }
@@ -103,7 +103,7 @@
         }
         .desc {
             color: $--color-gray;
-            padding-left: 2em;
+            padding-left: 0em;
             display: inline-block;
         }
 

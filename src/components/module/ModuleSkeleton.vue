@@ -17,9 +17,9 @@
         },
         computed: {
             seq() {
-                return _.times(this.number);
-            }
-        }
+                return _.times((this as any).number);
+            },
+        },
     })
     export default class ModuleSkeleton extends Vue {
     }

@@ -12,10 +12,7 @@
     anchor: {
       id: "banner",
       icon: "home",
-    },
-    header: {
-      title: "home",
-      subtitle: "home",
+      name:"Home",
     },
     name: "林中小舍",
     desc: [
@@ -28,7 +25,8 @@
   },
   // 正文
   // 不要修改各模块的 anchor.id
-  // 修改各模块的顺序可以同步到页面展示顺序
+  // 通过display控制模块是否展示
+  // 通过列表顺序控制模块展示顺序
   modules: [
     // 关于页
     {
@@ -36,9 +34,10 @@
       anchor: {
         id: "about",
         icon: "user",
+        name: "About"
       },
       header: {
-        title: "about",
+        title: "information",
         subtitle: "about me",
       },
     },
@@ -48,12 +47,13 @@
       anchor: {
         id: "blog",
         icon: "profile",
+        name: "Blog",
       },
       header: {
         title: "blog",
         subtitle: "latest blog",
       },
-      // RSS订阅
+      blog: "https://segmentfault.com/blog/manerfan",
       rss: "https://segmentfault.com/feeds/blog/manerfan",
     },
   ],
