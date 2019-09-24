@@ -16,7 +16,7 @@
             subTitle: String,
         },
     })
-    export default class ContentTitle extends Vue {
+    export default class ModuleHeader extends Vue {
     }
 </script>
 

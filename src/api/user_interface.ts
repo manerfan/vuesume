@@ -15,7 +15,6 @@ export interface Social {
 
 export interface Banner {
     anchor: Anchor;
-    header: Header;
 
     [key: string]: any;
 }
@@ -31,6 +30,7 @@ export interface Module {
 export interface Anchor {
     id: string;
     icon: string;
+    name: string;
 }
 
 export interface Header {

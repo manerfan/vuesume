@@ -7,7 +7,7 @@ import _ from 'lodash';
 Vue.use(Vuex);
 
 const DEFAULT_TITLE = '林舍';
-const DEFAULT_MODULE = {display: false, anchor: {id: '', icon: ''}, header: {title: '', subtitle: ''}};
+const DEFAULT_MODULE = {display: false, anchor: {id: '', icon: '', name: ''}, header: {title: '', subtitle: ''}};
 
 function find(modules: Module[], id: string) {
     return _.find(modules, (module) => module.anchor.id === id) || DEFAULT_MODULE;
@@ -21,10 +21,7 @@ export default new Vuex.Store<UserData>({
             anchor: {
                 id: 'banner',
                 icon: 'home',
-            },
-            header: {
-                title: 'home',
-                subtitle: 'home',
+                name: 'Home',
             },
         },
         modules: [],
@@ -40,13 +37,7 @@ export default new Vuex.Store<UserData>({
             // 找到可展示的模块
             const modules = _.concat([state.banner], _.filter(state.modules, (module) => module.display));
             // 将模块中用于menu的字段抽出
-            return _.map(modules, (module) => {
-                return {
-                    id: module.anchor.id,
-                    icon: module.anchor.icon,
-                    title: module.header.title,
-                };
-            });
+            return _.map(modules, (module) => module.anchor);
         },
         moduleIds(state): string[] {
             // 找到可展示的模块

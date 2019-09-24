@@ -12,10 +12,7 @@
     anchor: {
       id: "banner",
       icon: "home",
-    },
-    header: {
-      title: "Home",
-      subtitle: "home",
+      name:"Home",
     },
     name: "林中小舍",
     desc: [
@@ -37,9 +34,10 @@
       anchor: {
         id: "about",
         icon: "user",
+        name: "About"
       },
       header: {
-        title: "About",
+        title: "information",
         subtitle: "about me",
       },
     },
@@ -49,12 +47,13 @@
       anchor: {
         id: "blog",
         icon: "profile",
+        name: "Blog",
       },
       header: {
-        title: "Blog",
+        title: "blog",
         subtitle: "latest blog",
       },
-      // RSS订阅
+      blog: "https://segmentfault.com/blog/manerfan",
       rss: "https://segmentfault.com/feeds/blog/manerfan",
     },
   ],

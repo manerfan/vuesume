@@ -2,25 +2,24 @@
 
 <template>
     <div class="content about" id="about">
-        <ContentTitle title="Information" sub-title="About Me" />
-        <a-skeleton data-aos="fade-right" active avatar :paragraph="{rows: 4}" />
-        <a-skeleton data-aos="fade-right" active avatar :paragraph="{rows: 4}" />
-        <a-skeleton data-aos="fade-right" active avatar :paragraph="{rows: 4}" />
-        <a-skeleton data-aos="fade-right" active avatar :paragraph="{rows: 4}" />
+        <ModuleHeader :title="about.header.title" :sub-title="about.header.subtitle" />
+        <ModuleSkeleton :display="true" :number="2" />
     </div>
 </template>
 
 <script lang="ts">
     import {Component, Vue} from 'vue-property-decorator';
-    import ContentTitle from '@/components/content/ContentTitle.vue';
+    import ModuleHeader from '@/components/module/ModuleHeader.vue';
+    import ModuleSkeleton from '@/components/module/ModuleSkeleton.vue';
     import {mapGetters} from 'vuex';
 
     @Component({
         components: {
-            ContentTitle,
+            ModuleHeader,
+            ModuleSkeleton,
         },
         computed: {
-            ...mapGetters([]),
+            ...mapGetters(['about']),
         },
     })
     export default class About extends Vue {

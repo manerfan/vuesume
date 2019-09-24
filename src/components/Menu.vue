@@ -16,7 +16,7 @@
                     <!-- 根据配置动态模块的内容和顺序 -->
                     <a-menu-item v-for="m in menus" v-bind:key="m.id">
                         <a-icon :type="m.icon" />
-                        <a v-smooth-scroll :href="'#' + m.id" @click="closeMenuDrawer">{{m.title}}</a>
+                        <a v-smooth-scroll :href="'#' + m.id" @click="closeMenuDrawer">{{m.name}}</a>
                     </a-menu-item>
                 </a-menu>
             </a-layout-content>

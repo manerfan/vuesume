@@ -1,7 +1,7 @@
 export interface Rss {
-    status: string;
-    feed: Feed;
-    items: FeedItem[];
+    status?: string;
+    feed?: Feed;
+    items?: FeedItem[];
 }
 
 export interface Feed {

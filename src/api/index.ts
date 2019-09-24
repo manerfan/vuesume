@@ -10,13 +10,13 @@ export default {
         });
     },
 
-    rss(rss: string, cb: (d: Rss) => void, error: (reason: any) => void): void {
+    rss(rss: string, cb: (d: Rss) => void, final: () => void, error: (reason: any) => void): void {
         axios.get<Rss>('https://api.rss2json.com/v1/api.json', {
             params: {
                 rss_url: rss,
             },
         }).then(({data}) => {
             cb(data);
-        }).catch(error);
+        }).catch(error).finally(final);
     },
 };
