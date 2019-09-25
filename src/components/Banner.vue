@@ -3,7 +3,7 @@
 <template>
     <div class="banner" id="banner">
         <!-- 加载层 -->
-        <div class="bg"><h1 class="animated infinite pulse">林小二奋笔疾书...</h1></div>
+        <div class="bg back"><h1 class="animated infinite pulse">林小二奋笔疾书...</h1></div>
         <!-- 脚贴 -->
         <div class="fork-me">
             <a class="fork-me-link" href="https://github.com/manerfan/vuesume" target="_blank">
@@ -73,6 +73,10 @@
             z-index: -1;
             background: $--color-cyan url("../assets/bg_banner.jpg") no-repeat center center fixed;
             background-size: cover;
+
+            .back {
+                z-index: -2;
+            }
 
             h1 {
                 display: block;

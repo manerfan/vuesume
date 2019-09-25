@@ -5,7 +5,7 @@
         <ModuleHeader :title="blog.header.title" :sub-title="blog.header.subtitle"/>
         <ModuleSkeleton :display="loading" :number="2"/>
         <a-list v-if="!loading" itemLayout="vertical" size="large" :dataSource="((rss || {}).items || []).slice(0, 10)">
-            <a-list-item data-aos="fade-right" slot="renderItem" slot-scope="item, index" key="item.guid">
+            <a-list-item data-aos="fade-in" slot="renderItem" slot-scope="item, index" key="item.guid">
                 <a-list-item-meta>
                     <a-avatar slot="avatar" :src="item.thumbnail" icon="book" />
                     <a class="title" slot="title" :href="item.link" target="_blank">{{decode(item.title)}}</a>

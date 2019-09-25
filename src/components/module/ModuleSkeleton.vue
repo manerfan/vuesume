@@ -2,7 +2,7 @@
 
 <template>
     <div class="skeleton" v-if="display">
-        <a-skeleton v-for="num in seq" v-bind:key="num" data-aos="fade-right" active avatar :paragraph="{rows: 3}"/>
+        <a-skeleton v-for="num in seq" v-bind:key="num" data-aos="fade-in" active avatar :paragraph="{rows: 3}"/>
     </div>
 </template>
 
@@ -13,7 +13,7 @@
     @Component({
         props: {
             display: Boolean,
-            number: Number
+            number: Number,
         },
         computed: {
             seq() {
