@@ -7,6 +7,10 @@ import store from './store';
 import Antd from 'ant-design-vue';
 import 'ant-design-vue/dist/antd.css';
 
+// markdown
+// tslint:disable-next-line:no-var-requires
+import VueMarkdown from 'vue-markdown';
+
 // 动画
 import 'animate.css';
 
@@ -33,6 +37,7 @@ Vue.config.productionTip = false;
 
 Vue.use(Antd);
 Vue.use(VueSmoothScroll);
+Vue.use(VueMarkdown);
 
 store.dispatch('init');
 router.beforeEach((to, from, next) => {

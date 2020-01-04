@@ -48,11 +48,8 @@ export default new Vuex.Store<UserData>({
         banner(state): Banner {
             return state.banner || {};
         },
-        about(state): Module {
-            return find(state.modules, 'about');
-        },
-        blog(state): Module {
-            return find(state.modules, 'blog');
+        getModule: (state: UserData) => (id: string) => {
+           return find(state.modules, id);
         },
     },
     mutations: {

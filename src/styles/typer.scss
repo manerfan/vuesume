@@ -8,14 +8,12 @@ vue-typer {
   display: inline-block;
 }
 
-.typer-white {
+.typer {
   .vue-typer {
     display: inline-block;
 
     .custom {
       &.char {
-        color: $--font-color;
-
         &.selected {
           background-color: $--selection-color;
         }
@@ -24,6 +22,25 @@ vue-typer {
       &.caret {
         width: 5px;
         background-color: $--selection-color;
+      }
+    }
+  }
+
+  &.white {
+    .custom {
+      &.char {
+        color: $--font-color;
+      }
+    }
+  }
+
+  &.black {
+    .custom {
+      &.char {
+        color: $--color-content;
+        &.selected {
+          color: $--font-color;
+        }
       }
     }
   }

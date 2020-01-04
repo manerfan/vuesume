@@ -21,6 +21,7 @@
                 <a-layout-content v-for="id in moduleIds" v-bind:key="id">
                     <About v-if="id === 'about'"/>
                     <Blog v-if="id === 'blog'"/>
+                    <Experience v-if="id === 'experience'"/>
                 </a-layout-content>
                 <!-- 页脚 -->
                 <a-layout-footer><Footer/></a-layout-footer>
@@ -41,6 +42,7 @@
     import Banner from '@/components/Banner.vue';
     import Menu from '@/components/Menu.vue';
     import About from '@/components/About.vue';
+    import Experience from '@/components/Experience.vue';
     import Blog from '@/components/Blog.vue';
     import Footer from '@/components/Footer.vue';
 
@@ -49,6 +51,7 @@
             Banner,
             Menu,
             About,
+            Experience,
             Blog,
             Footer,
         },
@@ -96,6 +99,11 @@
         &.drawer-open {
             left: 276px;
         }
+    }
+
+    .layout-sider {
+        box-shadow: 1px 0 5px #e0e0e0;
+        z-index: 999;
     }
 
     @media screen and (max-width: $--screen-sm-min) {
