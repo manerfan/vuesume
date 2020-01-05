@@ -1,4 +1,8 @@
-# vuesume
+# Vuesume
+
+vue resume/cv template
+
+![preview](preview.png)
 
 ## Project setup
 ```
@@ -54,3 +58,4 @@ Development
 - [TypeScript](https://github.com/Microsoft/TypeScript)
 - [sass](https://github.com/sass/node-sass)
 - [ali-oss](https://github.com/aliyun/oss-nodejs-sdk)
+- [config-file-loader](https://github.com/reyesr/config-file-loader)

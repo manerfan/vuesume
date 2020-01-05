@@ -3,7 +3,7 @@
 <template>
     <div class="banner" id="banner">
         <!-- 加载层 -->
-        <div class="bg back"><h1 class="animated infinite pulse">林小二奋笔疾书...</h1></div>
+        <div class="bg back"><h1>林小二奋笔疾书...</h1></div>
         <!-- 脚贴 -->
         <div class="fork-me">
             <a class="fork-me-link" href="https://github.com/manerfan/vuesume" target="_blank">
@@ -71,7 +71,10 @@
             width: 100%;
             height: 100%;
             z-index: -1;
-            background: $--color-cyan url("../assets/bg_banner.jpg") no-repeat center center fixed;
+            background: $--color-cyan url("../assets/bg_banner.jpg") no-repeat center center scroll;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
             background-size: cover;
 
             .back {

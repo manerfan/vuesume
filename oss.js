@@ -5,33 +5,26 @@
  * @since 2017-08-23
  */
 
-var fs = require('fs');
-var path = require('path');
-var url = require('url');
+const OSS = require('ali-oss');
+const u = require('underscore');
 
-var OSS = require('ali-oss');
-
-var u = require('underscore');
-
-var ConfigFileLoader = require('config-file-loader');
+const ConfigFileLoader = require('config-file-loader');
 /**
  * 读取全局配置
  * ~/.aliyun
  * @link https://github.com/reyesr/config-file-loader
  */
-var aliyunConfig = new ConfigFileLoader.Loader().get('aliyun');
+const aliyunConfig = new ConfigFileLoader.Loader().get('aliyun');
 
 // 默认配置参数
-var DEFAULT_OPTIONS = {
+const DEFAULT_OPTIONS = {
     enable: false,
     retry: 3,
     filter: function (file) {
         return true;
     }
 };
-/**
- * @constructor
- */
+
 function WebpackAliyunOssPlugin(options) {
     this.options = u.extend({}, DEFAULT_OPTIONS, options);
 
@@ -39,7 +32,7 @@ function WebpackAliyunOssPlugin(options) {
         return;
     }
 
-    var conf = aliyunConfig;
+    const conf = aliyunConfig;
 
     this.client = new OSS({
         region: conf.region,
@@ -49,47 +42,67 @@ function WebpackAliyunOssPlugin(options) {
     });
 }
 
+/**
+ * 定义插件的动作
+ * @param compiler
+ */
 WebpackAliyunOssPlugin.prototype.apply = function (compiler) {
-    var me = this;
-    if (!me.options.enable) {
+    const _this = this;
+    if (!_this.options.enable) {
         console.log('[WebpackAliyunOssPlugin SUCCESS]: skip');
         return;
     }
 
+    /**
+     * 文件编译hook
+     */
     compiler.hooks.emit.tapAsync('WebpackAliyunOssPlugin', function (compilation, callback) {
-        var files = u.filter(u.keys(compilation.assets), me.options.filter);
+        // 需要上传的文件列表
+        const files = u.filter(u.keys(compilation.assets), _this.options.filter);
 
         if (files.length === 0) {
             return callback();
         }
 
+        /**
+         * 上传文件
+         * @param file 文件（路径）
+         * @param times 重试次数
+         * @returns {Promise<OSS.PutObjectResult>}
+         */
         function upload(file, times) {
-            var source = compilation.assets[file].source();
-            var body = Buffer.isBuffer(source) ? source : Buffer.from(source, 'utf8');
-            return me.client.put(file, body, {
+            // 构造上传文件的buffer
+            const source = compilation.assets[file].source();
+            const body = Buffer.isBuffer(source) ? source : Buffer.from(source, 'utf8');
+
+            // 上传
+            return _this.client.put(file, body, {
                 timeout: 30 * 1000
             }).then(function () {
                 console.log('[WebpackAliyunOssPlugin SUCCESS]：', file);
-                var next = files.shift();
+                const next = files.shift();
                 if (next) {
-                    return upload(next, me.options.retry);
+                    // 递归
+                    return upload(next, _this.options.retry);
                 }
             }, function (e) {
                 if (times === 0) {
+                    // 失败
                     throw new Error('[WebpackAliyunOssPlugin ERROR]: ', e);
-                }
-                else {
-                    console.log('[WebpackAliyunOssPlugin retry]：', times, file);
+                } else {
+                    // 失败重试
+                    console.warn('[WebpackAliyunOssPlugin retry]：', times, file);
                     return upload(file, --times);
                 }
             });
         }
 
-        upload(files.shift(), me.options.retry).then(function () {
+        // 上传
+        upload(files.shift(), _this.options.retry).then(function () {
             console.log('[WebpackAliyunOssPlugin FINISHED]', 'All Completed');
             callback();
         }).catch(function (e) {
-            console.log('[WebpackAliyunOssPlugin FAILED]', e);
+            console.error('[WebpackAliyunOssPlugin FAILED]', e);
             return callback(e);
         });
     });
