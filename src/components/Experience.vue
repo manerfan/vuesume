@@ -8,7 +8,7 @@
                 <a-card class="experience-card" :bordered="true" style="width: 100%">
                     <template slot="title">
                         <h1 class="title">{{card.title}}</h1>
-                        <span class="sub-title">{{card.subTitle}}</span>
+                        <span v-if="!!card.subTitle" class="sub-title">{{card.subTitle}}</span>
                     </template>
                     <vue-markdown>{{card.md}}</vue-markdown>
                 </a-card>
@@ -47,11 +47,14 @@
             width: 100%;
             font-size: 1rem;
             overflow: scroll;
+            margin: 0;
         }
 
         .sub-title {
             width: 100%;
             font-size: .5rem;
+            display: block;
+            margin-top: .5rem;
         }
     }
 </style>
