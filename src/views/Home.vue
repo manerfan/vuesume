@@ -7,7 +7,7 @@
         <!-- 内容 -->
         <a-layout>
             <!-- 菜单 -->
-            <a-layout-sider class="layout-sider" width="320"><Menu/></a-layout-sider>
+            <a-layout-sider class="layout-sider" width="320"><a-affix><Menu/></a-affix></a-layout-sider>
             <!-- 正文部分 -->
             <a-layout class="layout-content">
                 <!-- 小屏侧边栏抽屉按钮 -->
@@ -101,11 +101,6 @@
         }
     }
 
-    .layout-sider {
-        box-shadow: 1px 0 5px #e0e0e0;
-        z-index: 999;
-    }
-
     @media screen and (max-width: $--screen-sm-min) {
         .layout-sider {
             display: none;
@@ -115,6 +110,11 @@
     @media screen and (min-width: $--screen-sm-min) {
         .sider-menu-trigger {
             display: none;
+        }
+
+        .layout-sider {
+            box-shadow: 1px 0 5px #e0e0e0;
+            z-index: 999;
         }
     }
 </style>

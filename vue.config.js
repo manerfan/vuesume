@@ -9,7 +9,7 @@ module.exports = {
     configureWebpack: {
         plugins: [
             new WebpackAliyunOssPlugin({
-                enable: true
+                enable: false
             })
         ]
     }

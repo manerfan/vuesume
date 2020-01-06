@@ -1,38 +1,36 @@
 <!-- 菜单 -->
 
 <template>
-    <a-affix>
-        <a-layout class="layout-menu">
-            <!-- 头像 -->
-            <div class="header">
-                <span class="avatar ant-avatar ant-avatar-circle ant-avatar-image">
-                    <img draggable="false" src="../assets/avatar.jpg">
-                </span>
-                <span>{{banner.name|| '林中小舍'}}</span>
-            </div>
-            <!-- 菜单 -->
-            <a-layout-content class="menu">
-                <a-menu>
-                    <!-- 根据配置动态模块的内容和顺序 -->
-                    <a-menu-item v-for="m in menus" v-bind:key="m.id">
-                        <a-icon :type="m.icon" />
-                        <a v-smooth-scroll :href="'#' + m.id" @click="closeMenuDrawer">{{m.name}}</a>
-                    </a-menu-item>
-                </a-menu>
-            </a-layout-content>
-            <!-- 菜单页脚 -->
-            <a-layout-footer class="footer">
-                <!-- 社交 -->
-                <a-row type="flex" justify="center" align="middle" :gutter="2">
-                    <a-col span="24"><Social color="rgb(136,136,136)" :size="1.2"/></a-col>
-                </a-row>
-                <!-- 版权 -->
-                <a-row type="flex" justify="center" align="middle" :gutter="2">
-                    <a-col span="24"><Copyrights color="rgb(136,136,136)" :size=".6"/></a-col>
-                </a-row>
-            </a-layout-footer>
-        </a-layout>
-    </a-affix>
+    <a-layout class="layout-menu">
+        <!-- 头像 -->
+        <div class="header">
+            <span class="avatar ant-avatar ant-avatar-circle ant-avatar-image">
+                <img draggable="false" src="../assets/avatar.jpg">
+            </span>
+            <span>{{banner.name|| '林中小舍'}}</span>
+        </div>
+        <!-- 菜单 -->
+        <a-layout-content class="menu">
+            <a-menu>
+                <!-- 根据配置动态模块的内容和顺序 -->
+                <a-menu-item v-for="m in menus" v-bind:key="m.id">
+                    <a-icon :type="m.icon" />
+                    <a v-smooth-scroll :href="'#' + m.id" @click="closeMenuDrawer">{{m.name}}</a>
+                </a-menu-item>
+            </a-menu>
+        </a-layout-content>
+        <!-- 菜单页脚 -->
+        <a-layout-footer class="footer">
+            <!-- 社交 -->
+            <a-row type="flex" justify="center" align="middle" :gutter="2">
+                <a-col span="24"><Social color="rgb(136,136,136)" :size="1.2"/></a-col>
+            </a-row>
+            <!-- 版权 -->
+            <a-row type="flex" justify="center" align="middle" :gutter="2">
+                <a-col span="24"><Copyrights color="rgb(136,136,136)" :size=".6"/></a-col>
+            </a-row>
+        </a-layout-footer>
+    </a-layout>
 </template>
 
 <script lang="ts">

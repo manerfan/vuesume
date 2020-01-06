@@ -58,6 +58,10 @@ export default new Vuex.Store<UserData>({
             state.social = userData.social;
             state.banner = userData.banner;
             state.modules = userData.modules;
+
+            if (DEFAULT_TITLE === document.title) {
+                document.title = state.title;
+            }
         },
     },
     actions: {
