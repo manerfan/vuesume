@@ -1,50 +1,51 @@
 # Vuesume
 
+<!-- license -->
+<a href="https://github.com/manerfan/vuesume/blob/master/LICENSE" target="_blank">
+    <img alt="GitHub" src="https://img.shields.io/github/license/manerfan/vuesume">
+</a>
+<!-- 版本号 -->
+<a href="https://github.com/manerfan/vuesume/" target="_blank">
+    <img alt="GitHub package.json version" src="https://img.shields.io/github/package-json/v/manerfan/vuesume">
+</a>
+<!-- stars -->
+<a href="https://github.com/manerfan/vuesume/" target="_blank">
+    <img alt="GitHub stars" src="https://img.shields.io/github/stars/manerfan/vuesume">
+</a>
+<!-- fork -->
+<a href="https://github.com/manerfan/vuesume/fork" target="_blank">
+    <img alt="GitHub forks" src="https://img.shields.io/github/forks/manerfan/vuesume">
+</a>
+<!-- 下载 -->
+<a href="https://github.com/manerfan/vuesume/releases" target="_blank">
+    <img alt="GitHub All Releases" src="https://img.shields.io/github/downloads/manerfan/vuesume/total">
+</a>
+
+---
+
 ![preview](documentation/preview.png)
 
 vue resume/cv template  
 
 基于vue实现的 **个人主页** 模板
 
-点击查看 → [在线预览](https://cv.manerfan.com)
+👉[在线预览](https://cv.manerfan.com)👈
 
-- 支持屏幕自适应
-- 支持通过配置文件修改展示内容，减少自定义内容成本
-- 纯前端工程，减少部署成本
+支持：
 
-## 快速预览
+- 屏幕自适应
+- Banner模块
+- 关于模块
+- 履历模块
+- 博客模块（RSS订阅）
+- 菜单浮层（小屏）
+- json文件配置（修改模块内容，模块顺序）
+- 纯前端工程
+- 可扩展（自定义模块）
 
-```bash
-git clone https://github.com/manerfan/vuesume.git
-cd vuesume
-./preview
-open http://localhost:8081
-```
-
-## 项目依赖
-
-### 运行时依赖
-
-- [Vue.js](https://cn.vuejs.org/v2/guide/)
-- [Vuex](https://vuex.vuejs.org/zh/)
-- [Vue Router](https://router.vuejs.org/zh/)
-- [vue-class-component](https://github.com/vuejs/vue-class-component)
-- [vue-property-decorator](https://github.com/kaorun343/vue-property-decorator)
-- [vue-typer](https://github.com/cngu/vue-typer)
-- [vue-markdown](https://github.com/miaolz123/vue-markdown)
-- [vue2-smooth-scroll](https://github.com/Yuliang-Lee/vue2-smooth-scroll)
-- [Ant Design of Vue](https://www.antdv.com/docs/vue/introduce-cn/)
-- [axios](https://www.npmjs.com/package/axios)
-- [json5](https://github.com/json5/json5)
-- [lodash](https://github.com/lodash/lodash)
-- [aos](https://github.com/michalsnik/aos)
-- [Animate.css](https://github.com/daneden/animate.css)
-
-### 开发时依赖
-
-- [Vue Cli](https://cli.vuejs.org/zh/)
-- [vue-template-compiler](https://github.com/vuejs/vue/tree/dev/packages/vue-template-compiler)
-- [TypeScript](https://github.com/Microsoft/TypeScript)
-- [sass](https://github.com/sass/node-sass)
-- [ali-oss](https://github.com/aliyun/oss-nodejs-sdk)
-- [config-file-loader](https://github.com/reyesr/config-file-loader)
+## [wiki](https://github.com/manerfan/vuesume/wiki)
+[Introduction](https://github.com/manerfan/vuesume/wiki)  
+[1.快速开始](https://github.com/manerfan/vuesume/wiki/1.快速开始)  
+[2.自定义内容](https://github.com/manerfan/vuesume/wiki/2.自定义内容)  
+[3.快速部署](https://github.com/manerfan/vuesume/wiki/3.快速部署)  
+[4.扩展开发](https://github.com/manerfan/vuesume/wiki/4.扩展开发)  
