@@ -18,6 +18,7 @@ vue resume/cv template
 git clone https://github.com/manerfan/vuesume.git
 cd vuesume
 ./preview
+open http://localhost:8081
 ```
 
 ## 项目依赖
