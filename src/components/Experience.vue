@@ -4,11 +4,11 @@
     <div class="content" id="experience">
         <ModuleHeader :title="experience.header.title" :sub-title="experience.header.subtitle"/>
         <a-timeline>
-            <a-timeline-item data-aos="fade-in" v-for="card in experience.cards" v-bind:key="card.title + card.subTitle">
+            <a-timeline-item data-aos="fade-in" v-for="card in experience.cards" v-bind:key="card.title + card.subtitle">
                 <a-card class="experience-card" :bordered="true" style="width: 100%">
                     <template slot="title">
                         <h1 class="title">{{card.title}}</h1>
-                        <span v-if="!!card.subTitle" class="sub-title">{{card.subTitle}}</span>
+                        <span v-if="!!card.subtitle" class="sub-title">{{card.subtitle}}</span>
                     </template>
                     <vue-markdown>{{card.md}}</vue-markdown>
                 </a-card>

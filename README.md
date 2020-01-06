@@ -1,12 +1,12 @@
 # Vuesume
 
+![preview](documentation/preview.png)
+
 vue resume/cv template  
 
 基于vue实现的 **个人主页** 模板
 
-点击查看 → [效果预览](http://cv.manerfan.com)
-
-![preview](preview.png)
+点击查看 → [在线预览](https://cv.manerfan.com)
 
 - 支持屏幕自适应
 - 支持通过配置文件修改展示内容，减少自定义内容成本
