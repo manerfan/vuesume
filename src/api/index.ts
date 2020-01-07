@@ -4,6 +4,9 @@ import {UserData} from '@/api/user_interface';
 import {Rss} from '@/api/rss_interface';
 
 export default {
+    /**
+     * 获取data.json5内容
+     */
     init(cb: (d: UserData) => void): void {
         axios.get<string>('/data.json5', {
             params: {
@@ -15,6 +18,10 @@ export default {
         });
     },
 
+    /**
+     * 获取rss订阅
+     * https://rss2json.com/
+     */
     rss(rss: string, cb: (d: Rss) => void, final: () => void, error: (reason: any) => void): void {
         axios.get<Rss>('https://api.rss2json.com/v1/api.json', {
             params: {

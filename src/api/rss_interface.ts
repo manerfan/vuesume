@@ -1,3 +1,5 @@
+// https://rss2json.com/
+
 export interface Rss {
     status?: string;
     feed?: Feed;
